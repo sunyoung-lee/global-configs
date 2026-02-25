@@ -1,0 +1,23 @@
+name: naming-standard
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  naming:
+    runs-on: ubuntu-latest
+    env:
+      NAMING_ENFORCEMENT: ${{ vars.NAMING_ENFORCEMENT || 'warn' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate repository name
+        run: bash scripts/validate-repo-name.sh
+
+      - name: Validate JS/TS naming
+        run: node scripts/naming-check.mjs

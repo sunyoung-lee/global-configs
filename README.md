@@ -27,7 +27,7 @@
 ## 🏛️ 저장소 구조
 
 ```text
-global_configs/
+global-configs/
 │
 ├── scripts/                  # [The Hands] 자동화 스크립트
 │   └── gate-init.sh          # 테스트 게이트 + Husky 자동 설치
@@ -41,6 +41,7 @@ global_configs/
 │   ├── .prettierrc           # 코드 스타일 통일
 │   └── common.gitignore      # 전역 무시 항목
 │
+├── NAMING_STANDARD.md        # 전역 명명 규칙
 ├── deploy.sh                 # 마스터 배포 스크립트
 └── README.md                 # 지금 읽고 있는 이 파일
 ```
@@ -63,7 +64,7 @@ saveconfig    # 변경사항을 커밋하고 GitHub에 푸시
 프로젝트 루트에서:
 
 ```bash
-~/global_configs/scripts/gate-init.sh
+~/github/global-configs/scripts/gate-init.sh
 ```
 
 이 한 줄이 하는 일:
@@ -74,7 +75,7 @@ saveconfig    # 변경사항을 커밋하고 GitHub에 푸시
 ### 3. 전체 설정 일괄 배포
 
 ```bash
-~/global_configs/deploy.sh
+~/github/global-configs/deploy.sh
 ```
 
 `gate-init.sh` 실행 + 공통 설정 파일 링크를 한 번에 처리한다.
@@ -114,10 +115,10 @@ saveconfig    # 변경사항을 커밋하고 GitHub에 푸시
 
 ```bash
 # 예시: AppLogic AI 프로젝트
-AppLogicAI/Testing_Standard.md → ~/global_configs/templates/Testing_Standard.md
+AppLogicAI/Testing_Standard.md → ~/github/global-configs/templates/Testing_Standard.md
 ```
 
-수정은 항상 이 저장소(`global_configs`)에서. 프로젝트에서 직접 수정하지 않는다.
+수정은 항상 이 저장소(`global-configs`)에서. 프로젝트에서 직접 수정하지 않는다.
 
 ---
 
@@ -144,8 +145,60 @@ saveconfig                            # 커밋 + 푸시
 
 ```bash
 cd ~/새프로젝트
-~/global_configs/scripts/gate-init.sh  # 게이트 설치
+~/github/global-configs/scripts/gate-init.sh  # 게이트 설치
 # 코딩 시작. 테스트 없이는 커밋 불가.
+```
+
+---
+
+## 🧭 Naming Standard 적용
+
+전역 명명 규칙은 `NAMING_STANDARD.md`를 기준으로 적용한다.
+
+### 현재 상태 진단 (인벤토리)
+
+```bash
+~/github/global-configs/scripts/naming-inventory.sh ~/github
+```
+
+### 로컬 저장소명 통일 (kebab-case)
+
+```bash
+# dry-run
+~/github/global-configs/scripts/rename-local-repos.sh --root ~/github
+
+# apply
+~/github/global-configs/scripts/rename-local-repos.sh --apply --root ~/github
+```
+
+### GitHub 원격 저장소명 통일
+
+```bash
+# dry-run
+~/github/global-configs/scripts/rename-github-repos.sh --root ~/github
+
+# apply
+~/github/global-configs/scripts/rename-github-repos.sh --apply --root ~/github
+```
+
+### 전체 repo에 네이밍 게이트 배포
+
+```bash
+~/github/global-configs/scripts/install-naming-gate-all.sh --root ~/github
+```
+
+### 코드 네이밍 점검
+
+```bash
+cd ~/github/your-repo
+bash scripts/validate-repo-name.sh
+node scripts/naming-check.mjs
+```
+
+### 리포트 생성
+
+```bash
+~/github/global-configs/scripts/generate-naming-reports.sh ~/github
 ```
 
 ---

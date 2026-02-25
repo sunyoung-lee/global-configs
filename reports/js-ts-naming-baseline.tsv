@@ -1,0 +1,31 @@
+repo	summary
+ai-affirmation	WARN: Found 6 naming violation(s) in 16 files
+ai-boardroom	WARN: Found 13 naming violation(s) in 29 files
+ai-boyfriend	WARN: Found 8 naming violation(s) in 18 files
+ai-meme-maker	WARN: Found 22 naming violation(s) in 59 files
+ai-portfolio	WARN: Found 62 naming violation(s) in 81 files
+ai-running-coach	WARN: Found 3 naming violation(s) in 8 files
+app-logic-ai	WARN: Found 16 naming violation(s) in 40 files
+auto-newsletter-template	PASS: naming validation passed (1 files scanned)
+auto-pmo	WARN: Found 24 naming violation(s) in 36 files
+auto-pmo-pro	WARN: Found 30 naming violation(s) in 54 files
+axis	WARN: Found 27 naming violation(s) in 42 files
+daily-ai-action-bot	PASS: naming validation passed (1 files scanned)
+edu-orchestrator	WARN: Found 2 naming violation(s) in 10 files
+fiscal-sniper-ai	WARN: Found 36 naming violation(s) in 78 files
+global-sky-watcher	WARN: Found 19 naming violation(s) in 20 files
+gwan-sang-ai	WARN: Found 18 naming violation(s) in 57 files
+health-insight-sniper	WARN: Found 17 naming violation(s) in 48 files
+idea-killer	WARN: Found 27 naming violation(s) in 47 files
+jeju-deluang-shichon-web	WARN: Found 25 naming violation(s) in 59 files
+jeju-harbang-tarot	WARN: Found 20 naming violation(s) in 26 files
+legal-sniper-ai	WARN: Found 35 naming violation(s) in 94 files
+love-test	WARN: Found 4 naming violation(s) in 11 files
+nomad-jeju	WARN: Found 34 naming violation(s) in 45 files
+passion-coordinates	WARN: Found 10 naming violation(s) in 26 files
+propose-ai	WARN: Found 11 naming violation(s) in 48 files
+reply-right	WARN: Found 9 naming violation(s) in 18 files
+run-test	PASS: naming validation passed (3 files scanned)
+vibecoding-pmo	PASS: naming validation passed (1 files scanned)
+vibelog-ai	WARN: Found 20 naming violation(s) in 33 files
+web-ui-spec-architect	WARN: Found 29 naming violation(s) in 60 files
